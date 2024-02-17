@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-#include <vector>
+#include <format>
 
 class Vector2 {
     public:
@@ -45,7 +45,7 @@ class Vector2 {
             try {
                 float roundedX = roundFloatToMinimumAccuracy(x);
                 float roundedY = roundFloatToMinimumAccuracy(y);
-
+                std::string formattedString = std::("({}, {})");
                 return "X: " + std::to_string(roundedX) + " Y: " + std::to_string(roundedY);
             } catch(std::exception err) {
                 return "Unable to convert Vector2 to string";
