@@ -64,9 +64,9 @@ public:
     }
 
     ~Vector3() {
-        delete& x;
-        delete& y;
-        delete& z;
+        //delete& x;
+        //delete& y;
+        //delete& z;
     }
 
     std::string toString() {

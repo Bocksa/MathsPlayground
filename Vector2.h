@@ -38,8 +38,8 @@ class Vector2 : private Vector {
         // retard proofing has concluded
 
         ~Vector2() {
-            delete& x;
-            delete& y;
+            //delete& x;
+            //delete& y;
         }
 
         std::string toString() {
