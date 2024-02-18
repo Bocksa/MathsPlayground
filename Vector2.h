@@ -54,6 +54,14 @@ class Vector2 : private Vector {
         }
 
         Vector2 operator* (float multiplier) {
-            return Vector2(this->x * multiplier, this->x * multiplier);
+            return mult(multiplier);
+        }
+
+        Vector2 mult (float multiplier) {
+            return Vector2(this->x * multiplier, this->y * multiplier);
+        }
+
+        Vector2 mult (Vector2 vector) {
+            return vector;
         }
 };
