@@ -1,7 +1,9 @@
 #pragma once
-#include <string>
 
-class Vector3 {
+#include <string>
+#include "Vector.h"
+
+class Vector3 : private Vector {
 public:
     float x;
     float y;
@@ -25,6 +27,42 @@ public:
         z = float(Z);
     }
 
+    Vector3(int X, float Y, float Z) {
+        x = float(X);
+        y = Y;
+        z = Z;
+    }
+
+    Vector3(int X, int Y, float Z) {
+        x = float(X);
+        y = float(Y);
+        z = Z;
+    }
+
+    Vector3(float X, int Y, float Z) {
+        x = float(X);
+        y = Y;
+        z = float(Z);
+    }
+
+    Vector3(float X, int Y, int Z) {
+        x = X;
+        y = float(Y);
+        z = float(Z);
+    }
+
+    Vector3(float X, float Y, int Z) {
+        x = X;
+        y = Y;
+        z = float(Z);
+    }
+
+    Vector3(int X, float Y, int Z) {
+        x = float(X);
+        y = Y;
+        z = float(Z);
+    }
+
     ~Vector3() {
         delete& x;
         delete& y;
@@ -33,7 +71,11 @@ public:
 
     std::string toString() {
         try {
-            return "X: " + std::to_string(x) + " Y: " + std::to_string(y) + " Z: " + std::to_string(z);
+            std::string roundedX = roundFloatToMinimumAccuracyAsString(x);
+            std::string roundedY = roundFloatToMinimumAccuracyAsString(y);
+            std::string roundedZ = roundFloatToMinimumAccuracyAsString(z);
+
+            return "(" + roundedX + ", " + roundedY + ", " + roundedZ + ")";
         } catch (std::exception err) {
             return "Unable to convert Vector2 to string";
         }

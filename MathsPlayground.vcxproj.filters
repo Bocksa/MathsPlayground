@@ -19,6 +19,9 @@
     <Filter Include="Header Files\Lines">
       <UniqueIdentifier>{6b2a80c0-1ccb-4d8b-9de0-7afc6d4fa1c0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Matrices">
+      <UniqueIdentifier>{920d1338-bff9-44c4-b4bb-76aaec824a4e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MathsPlayground.cpp">
@@ -43,6 +46,12 @@
     </ClInclude>
     <ClInclude Include="Line2D.h">
       <Filter>Header Files\Lines</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector.h">
+      <Filter>Header Files\Vectors</Filter>
+    </ClInclude>
+    <ClInclude Include="Matrix.h">
+      <Filter>Header Files\Matrices</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

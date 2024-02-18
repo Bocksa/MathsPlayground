@@ -1,8 +1,9 @@
 #pragma once
-#include <string>
-#include <format>
 
-class Vector2 {
+#include <string>
+#include "Vector.h"
+
+class Vector2 : private Vector {
     public:
         float x;
         float y;
@@ -43,27 +44,16 @@ class Vector2 {
 
         std::string toString() {
             try {
-                float roundedX = roundFloatToMinimumAccuracy(x);
-                float roundedY = roundFloatToMinimumAccuracy(y);
-                std::string formattedString = std::("({}, {})");
-                return "X: " + std::to_string(roundedX) + " Y: " + std::to_string(roundedY);
+                std::string roundedX = roundFloatToMinimumAccuracyAsString(x);
+                std::string roundedY = roundFloatToMinimumAccuracyAsString(y);
+
+                return "(" + roundedX + ", " + roundedY + ")";
             } catch(std::exception err) {
                 return "Unable to convert Vector2 to string";
             }
         }
 
-    private: 
-        float roundFloatToMinimumAccuracy(float inputFloat) {
-            char floatArray[7];
-            sprintf(floatArray, "%f", inputFloat); // sets characterInput to each individual character of the input float using string formatting
-            getSigFigs(floatArray);
-        }
-
-        int getSigFigs(char floatArray[7]) {
-            for (int i = 7; i >= 0; i--) {
-                if (floatArray[i] != '0') {
-                    return i;
-                }
-            }
+        Vector2 operator* (float multiplier) {
+            return Vector2(this->x * multiplier, this->x * multiplier);
         }
 };
