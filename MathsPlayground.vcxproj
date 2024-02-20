@@ -131,8 +131,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BaseTypes.cpp" />
-    <ClCompile Include="Line2D.cpp" />
     <ClCompile Include="MathsPlayground.cpp" />
   </ItemGroup>
   <ItemGroup>
